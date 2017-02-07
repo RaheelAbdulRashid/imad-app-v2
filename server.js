@@ -9,9 +9,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article_1', function (req, res) {
-  res.send('hello');
-});
 
 app.get('/article_one', function(req,res){
     res.send('Article shall be served here');
