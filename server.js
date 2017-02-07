@@ -13,15 +13,15 @@ app.get('/article_1', function (req, res) {
   res.send('hello');
 });
 
-app.get('/article_one',function(req,res){
+app.get('/article_one', function(req,res){
     res.send('Article shall be served here');
 });
 
-app.get('/article_two',function(req,res){
+app.get('/article_two', function(req,res){
     res.send('Article shall be served here');
 });
 
-app.get('/article_three',function(req,res){
+app.get('/article_three', function(req,res){
     app.send('Article shall be served here');
 });
 
