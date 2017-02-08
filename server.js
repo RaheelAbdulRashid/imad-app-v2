@@ -70,7 +70,7 @@ var htmlTemplate=
 
 
 app.get('/article_one', function(req,res){
-   res.send(createTemplate(article_one))
+   res.send(createTemplate(article_one));
 });
 
 app.get('/article_two', function(req,res){
