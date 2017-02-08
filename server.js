@@ -10,8 +10,67 @@ app.get('/', function (req, res) {
 });
 
 
+var article_one={
+    title:'Article One | Raheel Mukadam',
+    heading:'Article One',
+    date:'25 March 2017',
+    content:   `<p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                  </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+            </p>`
+    
+};
+
+function createTemplate(data){
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var content=data.content;
+    
+    
+var htmlTemplate=
+   ` <!DOCTYPE html>
+<html>
+    <head>
+        ${title}
+        <link href="ui/style.css*">
+    </head>
+    <body>
+     <div class="container">   
+        
+            <a href="/">Home</a>
+        
+        <hr/>
+        
+        <h3>
+            ${heading}
+        </h3>
+        
+        <div>
+            ${date}
+        </div>
+            
+            <div>
+                ${cotent}
+            </div>
+     </div>       
+    </body>
+</html>`;
+}
+
+
+
+
 app.get('/article_one', function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article_one.html'));
+   res.send(createTemplate(article_one))
 });
 
 app.get('/article_two', function(req,res){
