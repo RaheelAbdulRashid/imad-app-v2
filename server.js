@@ -97,13 +97,14 @@ var htmlTemplate=
      </div>       
     </body>
 </html>`;
+return htmlTemplate;
 }
 
 
 
 
 app.get('/:articleName', function(req,res){
-   var articleName=req.params.aricleName;
+   var articleName=req.params.articleName;
    res.send(createTemplate(ariticles[articleName]));
 });
 
