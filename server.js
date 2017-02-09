@@ -9,8 +9,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
-var article_one={
+var articles={
+    'article_one':{
     title:'Article One | Raheel Mukadam',
     heading:'Article One',
     date:'25 March 2017',
@@ -27,6 +27,39 @@ var article_one={
                      This is the content This is the content This is the content This is the content This is the content This is the content
             </p>`
     
+},
+    'article_two':{ title:'Article Two | Raheel Mukadam',
+    heading:'Article Two',
+    date:'25 March 2017',
+    content:   `<p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                  </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+            </p>`
+    },
+    'article_three':{ title:'Article Three | Raheel Mukadam',
+    heading:'Article Three',
+    date:'25 March 2017',
+    content:   `<p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                  </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+            </p>`
+    }
 };
 
 function createTemplate(data){
@@ -69,8 +102,9 @@ var htmlTemplate=
 
 
 
-app.get('/article_one', function(req,res){
-   res.send(createTemplate(article_one));
+app.get('/:articleName', function(req,res){
+   var articleName=req.params.aricleName;
+   res.send(createTemplate(ariticles[articleName]));
 });
 
 app.get('/article_two', function(req,res){
