@@ -59,7 +59,7 @@ var htmlTemplate=
         </div>
             
             <div>
-                ${cotent}
+                ${content}
             </div>
      </div>       
     </body>
