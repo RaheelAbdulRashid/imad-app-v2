@@ -4,8 +4,8 @@
         <link href="/ui/style.css" rel="stylesheet" />
     </head>
     <body>
-    <script type="text/javascript" src="/ui/main.js">
-        </script>
+    
+
     <div class="container">
         <div id="madi" class="center">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Sunset_2007-1.jpg" class="img-medium"/>
@@ -24,7 +24,19 @@
         </div>    
         </div>
     </div>   
-        
+    <script>
+    <!--type="text/javascript" src="/ui/main.js"--> 
+    var button=document.getElementById('counter');
+    var counter=0;
+
+    button.onclick=function(){
+    var counter=counter+1;
+    var span=document.getElementById('count');
+    span.innerHTML=counter.toString();
+
+    };
+    
+    </script>    
         
     </body>
 </html>
