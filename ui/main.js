@@ -60,6 +60,6 @@ submit.onclick=function(){
 
 
 //make a request to counter endpoint
-  request.open('GET','http://raheelabdulrashid.imad.hasura-app.io/submit-name' + name, true);
+   res.open('GET', 'http://raheelabdulrashid.imad.hasura-app.io/submit-name?name=' + names, true);
   request.send(null);
 };
