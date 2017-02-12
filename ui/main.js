@@ -33,13 +33,23 @@ var names=nameInput.value;
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
   //Make request to the server and send the name
+     if(request.readyState===XMLHttpRequest.DONE)
+      {
+        if(request.status===200)
+        {
+              //Capture the list of names and render it as a list
+                var names=['name1','name2','name3','name4'];
+                var list='';
+                for(var i=0;i<names.length;i++){
+                list+='<li>'+names[i]+'</li>';}
   
-  //Capture the list of names and render it as a list
-  var names=['name1','name2','name3','name4'];
-  var list='';
-  for(var i=0;i<names.length;i++){
-  list+='<li>'+names[i]+'</li>';}
-  
-  var ul=document.getElementById('namelist');
-  ul.innerHTML=list;
+                var ul=document.getElementById('namelist');
+                ul.innerHTML=list;    
+        }
+      }
 };
+
+
+//make a request to counter endpoint
+  request.open('GET','http://raheelabdulrashid.imad.hasura-app.io/submit-name'+name,true);
+  request.send(null);
