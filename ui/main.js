@@ -60,5 +60,5 @@ submit.onclick=function(){
 
 
 //make a request to counter endpoint
-  request.open('GET','http://raheelabdulrashid.imad.hasura-app.io/submit-name' + name, true);
+  request.open('GET','http://raheelabdulrashid.imad.hasura-app.io/submit-name + name', true);
   request.send(null);
