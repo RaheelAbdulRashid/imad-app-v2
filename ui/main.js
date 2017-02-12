@@ -32,6 +32,11 @@ var nameInput=document.getElementById('name');
 var names=nameInput.value;
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
+      //making request object
+  var request= new XMLHttpRequest();
+  //capture the response and store it in a variable
+  request.onreadystatechange=function()
+  {
   //Make request to the server and send the name
      if(request.readyState===XMLHttpRequest.DONE)
       {
@@ -48,6 +53,8 @@ submit.onclick=function(){
                 ul.innerHTML=list;    
         }
       }
+      
+  };
 };
 
 
