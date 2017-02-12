@@ -28,8 +28,7 @@ button.onclick=function(){
 
 };
 
-var nameInput=document.getElementById('name');
-var names=nameInput.value;
+
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
       //making request object
@@ -55,6 +54,8 @@ submit.onclick=function(){
       }
       
   };
+  var nameInput=document.getElementById('name');
+  var names=nameInput.value;
 };
 
 
