@@ -122,7 +122,7 @@ app.get('/submit-name',function(req,res){//https://---------/?name=xxxxx
 
 app.get('/:articleName', function(req,res){
    var articleName=req.params.articleName;
-   res.send(createTemplate(ariticles[articleName]));
+   res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article_two', function(req,res){
