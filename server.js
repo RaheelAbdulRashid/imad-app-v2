@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var pool=new pool(config);
+var pool=new Pool(config);
 app.get('/test_db',function(req,res){
    //make select request 
    //return response
@@ -115,7 +115,7 @@ var htmlTemplate=
         </h3>
         
         <div>
-            ${date}
+            ${date.toDateString()}
         </div>
             
             <div>
@@ -150,7 +150,7 @@ app.get('/submit-name',function(req,res){//https://---------/?name=xxxxx
 app.get('/articles/:articleName', function(req,res){
    var articleName=req.params.articleName;
    
-   pool.query("select * from article where title= "+req.params.articleName,function(err,result){
+   pool.query("select * from article where title='+req.params.articleName'",function(err,result){
        if(err){
            res.status(500).send(err.toString());
        }
