@@ -1,9 +1,9 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var Pool=require('pg').Pool;
+//var Pool=require('pg').Pool;
 
-var config={
+//var config={
     user:'raheelabdulrashid',
     database:'raheelabdulrashid',
     host:'db.imad.hasura-app.io',
@@ -18,8 +18,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var pool=new pool(config);
-app.get('/test_db',function(req,res){
+//var pool=new pool(config);
+//app.get('/test_db',function(req,res){
    //make select request 
    //return response
    pool.query('SELECT*FROM test',function(err,result){
