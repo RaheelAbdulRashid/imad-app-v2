@@ -19,7 +19,7 @@ app.get('/', function (req, res) {
 });
 
 var pool=new Pool(config);
-app.get('/test_db',function(req,res){
+app.get('/test_db',function(err,result){
    //make select request 
    //return response
    pool.query('SELECT*FROM test',function(err,result){
