@@ -148,7 +148,7 @@ app.get('/submit-name',function(req,res){//https://---------/?name=xxxxx
 
 
 app.get('/articles/:articleName', function(req,res){
-   var articleName=req.params.articleName;
+   
    
    pool.query("select * from article where title='"+req.params.articleName+"'",function(err,result){
        if(err){
