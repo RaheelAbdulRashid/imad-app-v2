@@ -157,8 +157,8 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 
-var pool=new pool(config);
-app.get('/test_db',function(req,res){
+//var pool=new pool(config);
+//app.get('/test_db',function(req,res){
    //make select request 
    //return response
    pool.query('SELECT*FROM test',function(err,result){
