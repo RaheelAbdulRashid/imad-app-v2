@@ -36,58 +36,6 @@ app.get('/test_db',function(req,res){
 
 
 
-var articles={
-    'article_one':{
-    title:'Article One | Raheel Mukadam',
-    heading:'Article One',
-    date:'25 March 2017',
-    content:   `<p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-                  </p>
-                <p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-                </p>
-                <p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-            </p>`
-    
-},
-    'article_two':{ title:'Article Two | Raheel Mukadam',
-    heading:'Article Two',
-    date:'25 March 2017',
-    content:   `<p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-                  </p>
-                <p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-                </p>
-                <p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-            </p>`
-    },
-    'article_three':{ title:'Article Three | Raheel Mukadam',
-    heading:'Article Three',
-    date:'25 March 2017',
-    content:   `<p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-                  </p>
-                <p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-                </p>
-                <p>
-                    This is the content This is the content This is the content This is the content This is the content This is the content
-                     This is the content This is the content This is the content This is the content This is the content This is the content
-            </p>`
-    }
-};
 
 function createTemplate(data){
     var title=data.title;
@@ -167,13 +115,7 @@ app.get('/articles/:articleName', function(req,res){
    
 });
 
-app.get('/article_two', function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article_two.html'));
-});
 
-app.get('/article_three', function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article_three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
@@ -193,3 +135,102 @@ var port = 8080; // Use 8080 for local development because you might already hav
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+app.get('/article_two', function(req,res){
+    res.sendFile(path.join(__dirname, 'ui', 'article_two.html'));
+});
+
+app.get('/article_three', function(req,res){
+   res.sendFile(path.join(__dirname, 'ui', 'article_three.html'));
+});
+
+*/
+
+
+/*
+
+
+var articles={
+    'article_one':{
+    title:'Article One | Raheel Mukadam',
+    heading:'Article One',
+    date:'25 March 2017',
+    content:   `<p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                  </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+            </p>`
+    
+},
+    'article_two':{ title:'Article Two | Raheel Mukadam',
+    heading:'Article Two',
+    date:'25 March 2017',
+    content:   `<p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                  </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+            </p>`
+    },
+    'article_three':{ title:'Article Three | Raheel Mukadam',
+    heading:'Article Three',
+    date:'25 March 2017',
+    content:   `<p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                  </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+                </p>
+                <p>
+                    This is the content This is the content This is the content This is the content This is the content This is the content
+                     This is the content This is the content This is the content This is the content This is the content This is the content
+            </p>`
+    }
+};
+
+*/
