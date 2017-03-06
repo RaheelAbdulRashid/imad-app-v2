@@ -10,9 +10,11 @@ var config={
     port:'5432',
     password:process.env.DB_PASSWORD
 };
+var bodyParser=require('body-parser');
 
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -36,14 +38,30 @@ app.get('/test_db',function(req,res){
 function hash(input,salt)
 {
     var hashed=crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
-    return hashed;
+    return ['pbkfd2',salt,'10000',hashed.toString('hex')].join('$');
 }
 app.get('/hash/:input',function(req,res){
     var hashedString=hash(req.params.input,'This is a random string');
     res.send(hashedString);
 });
 
-
+app.post('/create_user',function(req,res){
+   
+    var username=req.body.username;
+    var password=req.body.password;
+    //username and password input
+    
+    var salt=crypto.getRandomBytes(123).toString('hex');
+    var dbString=hash(password,salt);
+    pool.query('INSERT INTO "user" (username,password) VALUES($1,$2)',[username,dbString],function(err,result){
+        if(err){
+            res.status(500).send((err).toString('hex'));
+        }
+        else{
+            res.send('User Successfully created:'+username);
+        }
+    });
+});
 
 
 
