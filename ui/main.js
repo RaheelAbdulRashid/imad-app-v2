@@ -24,7 +24,7 @@ submit.onclick=function(){
   };
   
   var username=document.getElementById('username').value;
-  var password=documemt.getUsernameById('password').value;
+  var password=documemt.getElementById('password').value;
   console.log(username);
   cconsole.log(password);
 
