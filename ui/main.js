@@ -1,33 +1,4 @@
-var button=document.getElementById('counter');
-var counter=0;
-
-button.onclick=function(){
-
-  
-    //making request object
-  var request= new XMLHttpRequest();
-  //capture the response and store it in a variable
-  request.onreadystatechange=function()
-  {
-      if(request.readyState===XMLHttpRequest.DONE)
-      {
-        if(request.status===200)
-        {   
-            var counter=request.responseText;
-            counter=counter+1;
-            var span=document.getElementById('count');
-            span.innerHTML=counter;
-            
-        }
-      }
-  };
-  //make a request to counter endpoint
-  request.open('GET','http://raheelabdulrashid.imad.hasura-app.io/counter', true);
-  request.send(null);
-
-
-
-};
+//submit password username to login
 
 
 var submit=document.getElementById('submit_btn');
@@ -42,15 +13,11 @@ submit.onclick=function(){
       {
         if(request.status===200)
         {
-              //Capture the list of names and render it as a list
-                var names=request.responseText;
-                names=JSON.parse(names);
-                var list='';
-                for(var i=0;i<names.length;i++){
-                list+='<li>'+names[i]+'</li>';}
-  
-                var ul=document.getElementById('namelist');
-                ul.innerHTML=list;    
+              alert("Logged in Successfully");
+        }else if(request.status===403){
+            alert("Username/Password is incorrect");
+        }else if(request.status===500){
+            alert("Something went wrong on the server");
         }
       }
       
@@ -61,6 +28,10 @@ submit.onclick=function(){
 
 
 //make a request to counter endpoint
-   request.open('GET', 'http://raheelabdulrashid.imad.hasura-app.io/submit-name?name=' + names, true);
-  request.send(null);
+   request.open('POST', 'http://raheelabdulrashid.imad.hasura-app.io/login', true);
+   request.setRequestHeader('Content-Type','application/json'); 
+   request.send(JSON.stringify({username:username, password:password}));
+    
+    
+    
 };
