@@ -22,9 +22,11 @@ submit.onclick=function(){
       }
       
   };
-  var nameInput=document.getElementById('name');
-  var names=nameInput.value;
-
+  
+  var username=document.getElementById('username').value;
+  var password=documemt.getUsernameById('password').value;
+  console.log(username);
+  cconsole.log(password);
 
 
 //make a request to counter endpoint
